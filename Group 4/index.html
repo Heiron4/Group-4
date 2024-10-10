@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Striving Through Wellness</title>
+    <style>
+        /* Basic reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #f4f4f4; /* Light background for the whole page */
+        }
+
+        header {
+            background: #abe441;
+            padding: 1rem 0; /* Added padding for better spacing */
+            border-bottom: 1px solid #ddd;
+        }
+
+        .container {
+            width: 100%;
+            margin: 10px auto;
+            max-width: 1800px; 
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Space between logo, nav, and search */
+        }
+
+        .logo-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .logo-wrapper img {
+            width: 100px; /* Slightly smaller logo */
+            height: 100px; /* Maintain circular aspect */
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .logo-wrapper h1 {
+            font-size: 1.25rem;
+            color: #130b0b;
+            margin-top: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-left: auto;
+            align-items: center;
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            transition: color 0.3s ease; /* Smooth color transition */
+        }
+
+        nav ul li a:hover {
+            color: #555; /* Hover color for links */
+        }
+
+        .search-wrapper {
+            margin-left: 2rem; /* Space between nav and search bar */
+        }
+
+        .search-wrapper input[type="text"] {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 200px; /* Adjust width as needed */
+            transition: width 0.3s ease; /* Smooth width transition */
+        }
+
+        .search-wrapper input[type="text"]:focus {
+            width: 250px; /* Expand width on focus */
+            outline: none;
+            border-color: #abe441; /* Highlight border color */
+        }
+
+        .search-wrapper button {
+            padding: 0.5rem 1rem;
+            background: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-left: 0.5rem;
+        }
+
+        .search-wrapper button:hover {
+            background: #555;
+        }
+
+        .hero {
+            background: #eee;
+            color: #333;
+            text-align: center;
+            padding: 5rem 2rem; /* Increased padding for more prominence */
+            border-bottom: 1px solid #ddd; /* Added border for separation */
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem; /* Larger heading */
+            margin-bottom: 1rem;
+        }
+
+        .hero-content p {
+            font-size: 1.125rem; /* Slightly larger paragraph text */
+            margin-bottom: 2rem;
+            max-width: 800px; /* Constrain width for readability */
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 0.75rem 2rem; /* Increased padding for button */
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: background 0.3s ease; /* Smooth background transition */
+        }
+
+        .cta-button:hover {
+            background: #555;
+        }
+
+        footer {
+            background: #d5e69a;
+            color: #333;
+            text-align: center;
+            padding: 1rem 2rem; /* Increased padding for footer */
+            border-top: 1px solid #ddd;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul {
+                flex-direction: column;
+                margin-left: 0;
+                padding-top: 1rem;
+            }
+
+            nav ul li {
+                margin: 0.5rem 0;
+            }
+
+            .search-wrapper {
+                margin-left: 0;
+                margin-top: 1rem;
+            }
+
+            .hero-content {
+                padding: 3rem 1rem; /* Adjust padding for smaller screens */
+            }
+
+            .hero-content h2 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            margin-left: auto; /* Push navigation to the right */
+        }
+
+        nav ul li {
+            margin-left: 1.5rem;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+            position: relative; /* To position the pseudo-element */
+            padding-bottom: 0.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        nav ul li a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            height: 2px;
+            background: #abe441; /* Green underline */
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+            transform-origin: bottom right;
+        }
+
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        nav ul li a:hover {
+            color: #abe441; /* Change text color on hover */
+            transform: translateY(-3px); /* Slightly raise the text on hover */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="https://scontent.fmnl34-1.fna.fbcdn.net/v/t1.15752-9/456514333_1226619898763255_8788440838344330251_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=9f807c&_nc_eui2=AeFqS4i-mvmjrWLrJdGM0gIXIVe4uWZSGfohV7i5ZlIZ-qVw4EOr12CCPuQLMUgW5a5Wlubi53Q7g7M8tBgNwiiN&_nc_ohc=qquybV1VspcQ7kNvgENLm20&_nc_ht=scontent.fmnl34-1.fna&oh=03_Q7cD1QFZrYqNe0z2eiHjSnvJ51EhNge495DGnk_Rd0KbdGJfsA&oe=67032177" alt="Logo">
+                <h1>Striving Through Wellness</h1>
+            </div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+                <div class="search-wrapper">
+                    <input type="text" placeholder="Search...">
+                    <button type="button">Search</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Welcome to Our Website</h2>
+            <p>Explore our range of wellness services designed to help you live a healthier and happier life. Our dedicated team is here to support you every step of the way.</p>
+            <a href="#services" class="cta-button">Next</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Striving Through Wellness.</p>
+    </footer>
+</body>
+</html>
