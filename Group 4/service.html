@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Striving Through Wellness</title>
+    <link rel="stylesheet" href="service.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+</head>
+<body>
+    <header class="animate__animated animate__fadeInDown">
+        <div class="container">
+            <div class="logo-wrapper">
+                <img src="LOGOG4.jpg" alt="Logo" class="header-logo">
+                <h1 class="STW">Striving Through Wellness</h1>
+            </div>
+            <nav class="nav-container">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="service.html" class="service1">Services</a></li>
+                    <li><a href="contacts.html">Contact</a></li>
+                    <li><a href="products.html">Products</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="termsandcondition.html">Terms and Condition</a></li>
+                    <li><a href="FAQ.html">FAQ</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="search-bar">
+        <input type="text" placeholder="Search...">
+        <button type="button">Search</button>
+    </div>
+
+    <section class="body">
+        <h2 class="animate__animated animate__fadeIn">Wellness Guide</h2>
+
+        <div class="section animate__animated">
+            <h3>Workouts</h3>
+            <img src="WORKOUT.jpg" alt="Workout Image" class="section-image">
+            <p>Incorporating regular workouts into your routine is essential for maintaining physical health. Whether it's strength training, yoga, or cardio, find an activity that you enjoy and make it a part of your daily life.</p>
+            <ul>
+                <li>Strength Training: Build muscle with weights and resistance exercises.</li>
+                <li>Yoga: Enhance flexibility and mental clarity.</li>
+                <li>Cardio: Improve heart health with activities like running or cycling.</li>
+                <li>HIIT: High-Intensity Interval Training for effective fat burning.</li>
+                <li>Pilates: Focus on core strength and stability.</li>
+            </ul>
+        </div>
+
+        <div class="section animate__animated">
+            <h3>Lifestyles</h3>
+            <img src="LIFESTYLE.jpg" alt="Lifestyle Image" class="section-image">
+            <p>A healthy lifestyle includes not just exercise, but also sleep, stress management, and positive relationships. Cultivate habits that promote mental clarity and emotional resilience to support your overall well-being.</p>
+            <ul>
+                <li>Sleep Hygiene: Aim for 7-9 hours of quality sleep each night.</li>
+                <li>Mindfulness: Practice meditation or mindfulness to reduce stress.</li>
+                <li>Social Connections: Nurture relationships for emotional support.</li>
+                <li>Outdoor Activities: Spend time in nature to boost mood and energy.</li>
+                <li>Digital Detox: Limit screen time to improve mental well-being.</li>
+            </ul>
+        </div>
+
+        <div class="section animate__animated">
+            <h3>Foods You Can Eat</h3>
+            <img src="FOOD.jpg" alt="Healthy Food Image" class="section-image">
+            <p>Nutrition plays a vital role in wellness. Focus on incorporating whole foods like fruits, vegetables, lean proteins, and healthy fats into your diet. Meal planning can help you stay on track and make healthier choices.</p>
+            <ul>
+                <li>Fruits: Berries, apples, bananas for natural sweetness.</li>
+                <li>Vegetables: Leafy greens, broccoli, and peppers for vitamins.</li>
+                <li>Lean Proteins: Chicken, fish, beans, and legumes for muscle repair.</li>
+                <li>Whole Grains: Quinoa, brown rice, and oats for sustained energy.</li>
+                <li>Healthy Fats: Avocados, nuts, and olive oil for heart health.</li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Striving Through Wellness. All rights reserved.</p>
+    </footer>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('.section');
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animate__fadeInUp');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, options);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
